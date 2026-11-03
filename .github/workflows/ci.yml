@@ -22,4 +22,4 @@ jobs:
       - run: npm test
       # The shipped bundle must match the source.
       - run: npm run build
-      - run: git diff --exit-code ../bin/meter.mjs
+      - run: git diff --exit-code ../scripts/meter.mjs

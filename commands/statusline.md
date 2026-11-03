@@ -9,7 +9,7 @@ Help the user turn on the live cost display. Plugins cannot change Claude Code's
 {
   "statusLine": {
     "type": "command",
-    "command": "node \"${CLAUDE_PLUGIN_ROOT}/bin/meter.mjs\" statusline"
+    "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/meter.mjs\" statusline"
   }
 }
 ```

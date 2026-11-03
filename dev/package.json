@@ -2,7 +2,7 @@
   "name": "aperture-meter-dev",
   "version": "0.1.0",
   "private": true,
-  "description": "Build and test tooling for the Aperture Meter plugin. The plugin itself ships as ../bin/meter.mjs and needs none of this.",
+  "description": "Build and test tooling for the Aperture Meter plugin. The plugin itself ships as ../scripts/meter.mjs and needs none of this.",
   "license": "MIT",
   "type": "module",
   "repository": { "type": "git", "url": "git+https://github.com/manav2701/aperture-meter.git" },

@@ -39,7 +39,7 @@ Run `/aperture-meter:statusline` for the exact line to add, or put this in `~/.c
 {
   "statusLine": {
     "type": "command",
-    "command": "node \"<path to the plugin>/bin/meter.mjs\" statusline"
+    "command": "node \"<path to the plugin>/scripts/meter.mjs\" statusline"
   }
 }
 ```
@@ -48,8 +48,8 @@ Run `/aperture-meter:statusline` for the exact line to add, or put this in `~/.c
 
 - It reads **only token counts, the model name, a timestamp and the session id** from Claude Code's own session files in `~/.claude/projects`. It does not read, copy, keep or print the text of your messages, tool inputs, file paths or anything else in those files.
 - It never reads your Claude login or any credential, and it never sits between you and Claude. It works the same on Pro, Max, Team and API plans, because it only looks at a log after the fact. The only folder it opens under `~/.claude` is `projects`; `~/.claude/.credentials.json` and everything else there are never opened, and a test proves it.
-- Each command pre-approves one exact command, `node <plugin>/bin/meter.mjs`, and nothing else.
-- It contains **no network code**. A test in this repo (`test/meter.test.ts`) fails if any is added, and you can read the whole source in `src/`.
+- Each command pre-approves one exact command, `node <plugin>/scripts/meter.mjs`, and nothing else.
+- It contains **no network code**. A test in this repo (`dev/test/meter.test.ts`) fails if any is added, and you can read the whole source in `dev/src`.
 - It keeps a small cache of those numbers in your own config folder (`%APPDATA%\aperture-meter` on Windows, `~/.config/aperture-meter` elsewhere) so the status bar stays fast. Delete the folder at any time.
 
 ## Reading the numbers
@@ -68,18 +68,18 @@ This is the free, local half of [Aperture](https://getaperture.org), which gover
 
 ## Development
 
-The plugin is the repository root: `.claude-plugin/`, `commands/` and `bin/meter.mjs`. The readable TypeScript source, its tests and the build live in `dev/`, so that installing the plugin never installs a dependency.
+The plugin is the repository root: `.claude-plugin/`, `commands/` and `scripts/meter.mjs`. The readable TypeScript source, its tests and the build live in `dev/`, so that installing the plugin never installs a dependency.
 
 ```bash
 cd dev
 npm install
 npm test            # unit tests, including the "no network code" check
 npm run typecheck
-npm run build       # rebuilds ../bin/meter.mjs, the single file the plugin runs
+npm run build       # rebuilds ../scripts/meter.mjs, the single file the plugin runs
 node make-icon.mjs  # redraws ../.claude-plugin/icon.png from plain arithmetic
 ```
 
-`bin/meter.mjs` is committed so the plugin runs with nothing but Node. It is bundled, not minified, and CI fails if it does not match `dev/src`.
+`scripts/meter.mjs` is committed so the plugin runs with nothing but Node. It is bundled, not minified, and CI fails if it does not match `dev/src`.
 
 ## Licence
 

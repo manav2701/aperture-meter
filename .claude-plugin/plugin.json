@@ -1,11 +1,14 @@
 {
   "name": "aperture-meter",
   "displayName": "Aperture Meter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Free and local: what Claude Code is costing you, and where it is wasted. No account, no gateway, nothing leaves your machine.",
   "author": { "name": "Aperture" },
   "homepage": "https://github.com/manav2701/aperture-meter",
   "repository": "https://github.com/manav2701/aperture-meter",
+  "documentationUrl": "https://github.com/manav2701/aperture-meter#readme",
+  "supportUrl": "https://github.com/manav2701/aperture-meter/issues",
+  "privacyPolicyUrl": "https://github.com/manav2701/aperture-meter#what-it-reads-and-what-it-never-does",
   "license": "MIT",
   "keywords": ["cost", "usage", "tokens", "cache", "status line"]
 }
