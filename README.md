@@ -67,14 +67,17 @@ This is the free, local half of [Aperture](https://getaperture.org), which gover
 
 ## Development
 
+The plugin is the repository root: `.claude-plugin/`, `commands/` and `bin/meter.mjs`. The readable TypeScript source, its tests and the build live in `dev/`, so that installing the plugin never installs a dependency.
+
 ```bash
+cd dev
 npm install
 npm test            # unit tests, including the "no network code" check
 npm run typecheck
-npm run build       # rebuilds bin/meter.mjs, the single file the plugin runs
+npm run build       # rebuilds ../bin/meter.mjs, the single file the plugin runs
 ```
 
-`bin/meter.mjs` is committed so the plugin works without a build step. CI fails if it does not match `src/`.
+`bin/meter.mjs` is committed so the plugin runs with nothing but Node. It is bundled, not minified, and CI fails if it does not match `dev/src`.
 
 ## Licence
 

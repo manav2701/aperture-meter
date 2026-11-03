@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Generated from src/ by `npm run build`. Do not edit.
+// Generated from dev/src by `npm run build` in dev/. Do not edit.
 
 // src/cli.ts
 import { readFileSync as readFileSync3 } from "node:fs";
