@@ -1,7 +1,7 @@
 ---
 description: Where Claude Code money is being wasted this week (cache hits, run rate, costliest turns)
 argument-hint: '[days]'
-allowed-tools: Bash(node:*)
+allowed-tools: Bash(node "${CLAUDE_PLUGIN_ROOT}/bin/meter.mjs" report --days *)
 ---
 
 Here is the waste report for the last $ARGUMENTS days (7 if none were given), worked out on this machine:

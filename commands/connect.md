@@ -1,6 +1,6 @@
 ---
 description: Optional: send this usage to your company's Aperture workspace
-allowed-tools: Bash(node:*)
+allowed-tools: Bash(node "${CLAUDE_PLUGIN_ROOT}/bin/meter.mjs" connect)
 ---
 
 !`node "${CLAUDE_PLUGIN_ROOT}/bin/meter.mjs" connect`

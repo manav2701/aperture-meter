@@ -1,6 +1,6 @@
 ---
 description: What this Claude Code session has cost so far (at API prices), worked out locally
-allowed-tools: Bash(node:*)
+allowed-tools: Bash(node "${CLAUDE_PLUGIN_ROOT}/bin/meter.mjs" cost)
 ---
 
 Here is the cost of the current session, worked out on this machine from Claude Code's own session files:

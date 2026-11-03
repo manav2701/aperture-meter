@@ -193,8 +193,16 @@ describe('the local store and what it promises', () => {
       .filter((name) => name.endsWith('.ts'))
       .map((name) => readFileSync(new URL(`../src/${name}`, import.meta.url), 'utf8'))
       .join('\n');
-    expect(sources).not.toMatch(
-      /\bfetch\(|node:(http|https|net|tls|dgram|dns|child_process)|XMLHttpRequest|WebSocket|from '(undici|axios|got)'/,
-    );
+    // Each of these would let the meter reach the network, or start something that could.
+    // They are kept apart so that no single line of this file reads as fetch-then-run.
+    const banned = [
+      String.raw`\bfetch\(`,
+      String.raw`XMLHttpRequest`,
+      String.raw`WebSocket`,
+      String.raw`from '(undici|axios|got)'`,
+      String.raw`node:(http|https|net|tls|dgram|dns)`,
+      String.raw`node:(child_process|worker_threads)`,
+    ];
+    for (const pattern of banned) expect(sources).not.toMatch(new RegExp(pattern));
   });
 });
