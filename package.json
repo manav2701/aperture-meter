@@ -1,0 +1,24 @@
+{
+  "name": "aperture-meter",
+  "version": "0.1.0",
+  "description": "A free, local Claude Code plugin: what a session cost, and where money is wasted. Reads usage numbers from local session files; nothing leaves the machine, and no account is needed.",
+  "license": "MIT",
+  "type": "module",
+  "repository": { "type": "git", "url": "git+https://github.com/manav2701/aperture-meter.git" },
+  "bin": { "aperture-meter": "./bin/meter.mjs" },
+  "files": ["bin", "commands", ".claude-plugin"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "start": "tsx src/cli.ts",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

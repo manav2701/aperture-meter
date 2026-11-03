@@ -1,0 +1,15 @@
+{
+  "name": "aperture-meter",
+  "owner": {
+    "name": "Aperture"
+  },
+  "description": "Aperture Meter: a free, local cost meter for Claude Code.",
+  "plugins": [
+    {
+      "name": "aperture-meter",
+      "source": "./",
+      "description": "Free and local: what Claude Code costs you and where it is wasted. No account, nothing leaves your machine.",
+      "category": "usage"
+    }
+  ]
+}
